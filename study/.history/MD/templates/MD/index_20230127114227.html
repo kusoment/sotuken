@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}卒業研究{% endblock %}
+
+
+{% block content %}
+<h1>卒業研究</h1>
+<p>5119047 高野衆也</p> <br>
+{% endblock %}
+
+
+
+{% block body %}
+    <a href="{% url 'ef' %}">電極条件</a>
+    <a href="{% url 'ec' %}">電場計算</a>
+    <a href="{% url 'MDc' %}">MD計算</a>
+    
+
+{% endblock body %}

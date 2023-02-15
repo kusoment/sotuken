@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}電場計算{% endblock %}
+
+{% block content %}
+<a href="{% url 'index' %}">ホームに戻る</a>
+<a href="{% url 'ef' %}">電極条件</a>
+
+{% endblock %}
+
+
+{% block body %}
+<form action="/ec/" method="post">
+    {% csrf_token %}
+
+    <input type="submit" name="ec_buttuon" value="実行">
+    {{ message }}
+</form>
+
+
+{% endblock %}

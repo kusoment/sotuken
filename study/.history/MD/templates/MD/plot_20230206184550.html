@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}MD計算{% endblock %}
+
+
+{% block content %}
+<a href="{% url 'index' %}">ホームに戻る</a>
+<a href="{% url 'ef' %}">電極条件</a>
+<a href="{% url 'ec' %}">電場計算</a>
+<a href="{% url 'MDc' %}">MD計算</a>
+<a href="{% url 'plot' %}">グラフ化</a>
+{% endblock %}
+
+
+
+{% block body %}
+<form action="/plot/" method="post">
+    {% csrf_token %}
+    <input type="number" id="df_n" name="df_n" value="0">
+    <input type="submit" name="plot_buttuon" value="実行">
+    {{ message }}
+    </form>
+
+    <a href="{% url 'set_plot' %}">グラフ化</a>
+{% endblock body %}

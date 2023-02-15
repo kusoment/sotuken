@@ -1,0 +1,16 @@
+卒業研究でつくったやつをここに記します。
+Pythonという言語、主にDjangoというフレームワーク使用。
+作り方とか始め方とかは
+https://docs.djangoproject.com/ja/4.1/intro/tutorial01/
+https://itc.tokyo/django/tutorial/
+どっちかみるか[Django 始め方]とかで適当に調べてください。
+
+基本はviews.pyにいろいろ計算の指示とかをぶちこんでました。
+
+使うときはstudyフォルダをそのままダウンロードしてもらって、
+Anaconda PowerShell Command を起動して、manage.pyがあるときに[python manage.py runserver]
+で起動。
+URLをブラウザに張り付けてやる。
+
+利便性の為、電極条件で入力した値を引数として計算ファイルになげてるので途中から計算はできない。
+あとD5Gファイルの中のnpy消さないと電場計算できない。（もしかしたらあとで上書き可能になるかも）

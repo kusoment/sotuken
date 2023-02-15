@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form action="/ef" method="post">
+    {% csrf_token %}
+
+number vol X1 Y1 X2 Y2 RF<br>
+1 <input type="number" id="num1_vol" name="num1_vol"> <input type="number" name="num1_X1"><br>
+2 <input type="number" id="num2_vol" name="num2_vol"> <input type="number" name="num2_X1"><br>
+3 <input type="number" id="num3_vol" name="num3_vol"> <input type="number" name="num3_X1"><br>
+4 <input type="number" id="num4_vol" name="num4_vol"> <input type="number" name="num4_X1"><br>
+5 <input type="number" id="num5_vol" name="num5_vol"> <input type="number" name="num5_X1"><br>
+6 <input type="number" id="num6_vol" name="num6_vol"> <input type="number" name="num6_X1"><br>
+<input type="submit" value="送信"> <input type="reset" value="リセット"> {{ message }}
+
+</form>
+{% endblock body %}
+
+<!--フォームをpython側に送る　参考 https://style.potepan.com/articles/20409.html-->

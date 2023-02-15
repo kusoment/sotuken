@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}電極条件{% endblock %}
+
+{% block content %}
+<a href="{% url 'index' %}">ホームに戻る</a>
+<a href="{% url 'ef' %}">電極条件</a>
+<a href="{% url 'ec' %}">電場計算</a>
+<a href="{% url 'MDc' %}">MD計算</a>
+<a href="{% url 'plot' %}">グラフ化</a>
+
+{% endblock %}
+
+{% block body %}
+<form action="/ef/" method="post">
+    {% csrf_token %}
+
+number 　　vol     　　　　　 　　　　　X1     　　　　　　　　  Y1 　　　　　　　　　     X2　　　　　　　　      Y2　　　　　　　　      RF<br>
+1 <input type="number" id="num1_vol" name="num1_vol" value="10"> <input type="number" id="num1_X1" name="num1_X1" value="0"> <input type="number" id="num1_Y1" name="num1_Y1" value="200"> <input type="number" id="num1_X2" name="num1_X2" value="30"> <input type="number" id="num1_Y2" name="num1_Y2" value="1001"> <input type="number" id="num1_RF" name="num1_RF" value="-1"><br>
+2 <input type="number" id="num2_vol" name="num2_vol" value="5"> <input type="number" id="num2_X1" name="num2_X1" value="200"> <input type="number" id="num2_Y1" name="num2_Y1" value="200"> <input type="number" id="num2_X2" name="num2_X2" value="230"> <input type="number" id="num2_Y2" name="num2_Y2" value="1001"> <input type="number" id="num2_RF" name="num2_RF" value="1"><br>
+3 <input type="number" id="num3_vol" name="num3_vol" value="0"> <input type="number" id="num3_X1" name="num3_X1" value="400"> <input type="number" id="num3_Y1" name="num3_Y1" value="200"> <input type="number" id="num3_X2" name="num3_X2" value="430"> <input type="number" id="num3_Y2" name="num3_Y2" value="1001"> <input type="number" id="num3_RF" name="num3_RF" value="-1"><br>
+4 <input type="number" id="num4_vol" name="num4_vol" value="5"> <input type="number" id="num4_X1" name="num4_X1" value="600"> <input type="number" id="num4_Y1" name="num4_Y1" value="200"> <input type="number" id="num4_X2" name="num4_X2" value="630"> <input type="number" id="num4_Y2" name="num4_Y2" value="1001"> <input type="number" id="num4_RF" name="num4_RF" value="1"><br>
+5 <input type="number" id="num5_vol" name="num5_vol"value="10"> <input type="number" id="num5_X1" name="num5_X1" value="800"> <input type="number" id="num5_Y1" name="num5_Y1" value="200"> <input type="number" id="num5_X2" name="num5_X2" value="830"> <input type="number" id="num5_Y2" name="num5_Y2" value="1001"> <input type="number" id="num5_RF" name="num5_RF" value="-1"><br>
+6 <input type="number" id="num6_vol" name="num6_vol" value="25"> <input type="number" id="num6_X1" name="num6_X1" value="1000"> <input type="number" id="num6_Y1" name="num6_Y1" value="200"> <input type="number" id="num6_X2" name="num6_X2" value="1030"> <input type="number" id="num6_Y2" name="num6_Y2" value="1001"> <input type="number" id="num6_RF" name="num6_RF" value="1"><br>
+<input type="submit" value="送信"> <input type="reset" value="リセット"> 
+{{ message }}
+
+</form>
+{% endblock body %}
+
+<!--フォームをpython側に送る　参考 https://style.potepan.com/articles/20409.html-->
